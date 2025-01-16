@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Penalty</title>
+</head>
+<body>
+    <h1>Pay Penalty</h1>
+    <p>You have a penalty of ₹{{ penalty }}. Please pay the amount to proceed with checkout.</p>
+
+    <form action="/pay_penalty" method="POST">
+        <input type="hidden" name="vehicle_number" value="{{ vehicle_number }}">
+        <input type="hidden" name="penalty_amount" value="{{ penalty }}">
+        <button type="submit">Pay Penalty</button>
+    </form>
+</body>
+</html>

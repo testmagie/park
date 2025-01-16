@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Book a Parking Slot</h2>
+<form method="POST" action="{{ url_for('book_slot') }}">
+    <label for="vehicle_number">Vehicle Number:</label>
+    <input type="text" id="vehicle_number" name="vehicle_number" required>
+    <label for="vehicle_owner">Owner Name:</label>
+    <input type="text" id="vehicle_owner" name="vehicle_owner" required>
+    <label for="slot_number">Select Slot:</label>
+    <select id="slot_number" name="slot_number" required>
+        {% for slot in slots %}
+        <option value="{{ slot[0] }}">Slot {{ slot[0] }}</option>
+        {% endfor %}
+    </select>
+    <label for="in_time">In Time:</label>
+    <input type="datetime-local" id="in_time" name="in_time" required>
+    <label for="out_time">Out Time:</label>
+    <input type="datetime-local" id="out_time" name="out_time" required>
+    <label for="payment_method">Payment Method:</label>
+    <select id="payment_method" name="payment_method" required>
+        <option value="Net Banking">Net Banking</option>
+        <option value="Credit Card">Credit Card</option>
+        <option value="Debit Card">Debit Card</option>
+    </select>
+    <button type="submit">Book Slot</button>
+</form>
+{% endblock %}

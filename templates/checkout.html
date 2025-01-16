@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+</head>
+<body>
+    <h1>Checkout Vehicle</h1>
+    <form action="/checkout" method="POST">
+        <label for="vehicle_number">Vehicle Number:</label>
+        <input type="text" id="vehicle_number" name="vehicle_number" required><br>
+
+        <label for="vehicle_owner">Owner Name:</label>
+        <input type="text" id="vehicle_owner" name="vehicle_owner" required><br>
+
+        <button type="submit">Check Out</button>
+    </form>
+</body>
+</html>

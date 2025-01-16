@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Welcome to Vehicle Parking System</h2>
+
+{% if message %}
+    <div class="alert alert-warning">
+        <strong>{{ message }}</strong>
+    </div>
+{% endif %}
+
+<!-- Form to check available parking slots -->
+<form method="POST" action="{{ url_for('show_slots') }}">
+    <label for="vehicle_type">Select Vehicle Type:</label>
+    <select id="vehicle_type" name="vehicle_type">
+        <option value="Car">Car</option>
+        <option value="Bike">Bike</option>
+    </select>
+    <button type="submit">Check Available Slots</button>
+</form>
+
+<!-- Form for checkout -->
+<h2>Checkout</h2>
+<form action="{{ url_for('checkout') }}" method="get">
+    <button type="submit">Proceed to Checkout</button>
+</form>
+
+{% endblock %}

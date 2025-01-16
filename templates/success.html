@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Successful</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Booking Successful!</h1>
+        <p>Your parking slot has been successfully booked.</p>
+        <div class="details">
+            <p><strong>Slot Number:</strong> {{ slot_number }}</p>
+            <p><strong>Total Amount Paid:</strong> Rs. {{ amount }}</p>
+        </div>
+        <a href="{{ url_for('index') }}" class="btn">Back to Home</a>
+    </div>
+</body>
+</html>
